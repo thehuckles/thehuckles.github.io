@@ -7,7 +7,6 @@
     <!-- Favicon -->
     <link rel="icon" href="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678087-heart-512.png" type="image/png">
 
-    <!-- Smothy Bubble Font (Replace the link with the actual font URL if hosted) -->
     <style>
         @font-face {
             font-family: 'Smothy Bubble';
@@ -23,9 +22,40 @@
             background: linear-gradient(45deg, beige, #d2b48c); /* Beige and light brown */
             height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             overflow: hidden;
+        }
+
+        .lights-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .light {
+            width: 20px;
+            height: 40px;
+            background-color: red;
+            margin: 0 5px;
+            border-radius: 50% 50% 10% 10%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            animation: blink 2s infinite ease-in-out alternate;
+        }
+
+        .light:nth-child(2) { background-color: yellow; animation-delay: 0.5s; }
+        .light:nth-child(3) { background-color: green; animation-delay: 1s; }
+        .light:nth-child(4) { background-color: blue; animation-delay: 1.5s; }
+        .light:nth-child(5) { background-color: purple; animation-delay: 2s; }
+
+        @keyframes blink {
+            0% { opacity: 0.5; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1.1); }
         }
 
         .wavy-text {
@@ -34,6 +64,7 @@
             font-weight: bold; /* Explicitly bold */
             color: white;
             text-shadow: 3px 3px 6px black; /* Enhanced shadow for impact */
+            margin-top: 20px;
             display: inline-block;
             animation: wave 2s infinite ease-in-out;
         }
@@ -47,6 +78,14 @@
     </style>
 </head>
 <body>
+    <div class="lights-container">
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+        <div class="light"></div>
+    </div>
+
     <div class="wavy-text">
         Welcome to The Huckles!
     </div>
