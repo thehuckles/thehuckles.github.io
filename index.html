@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Huckles</title>
+    <!-- Favicon -->
+    <link rel="icon" href="https://png.pngtree.com/png-vector/20220705/ourmid/pngtree-sun-icon-logo-png-png-image_5687131.png" type="image/png">
+
+    <!-- Bowlby One Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #90EE90; /* Light green */
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .rainbow-text {
+            font-family: 'Bowlby One', cursive;
+            font-size: 3rem;
+            font-weight: bold;
+            text-align: center;
+            position: relative;
+            color: transparent;
+            background-image: linear-gradient(
+                to right,
+                red,
+                orange,
+                yellow,
+                green,
+                blue,
+                indigo,
+                violet
+            );
+            background-clip: text;
+            -webkit-background-clip: text;
+            animation: fadeInRainbow 3s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        .rainbow-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            color: transparent;
+            -webkit-text-stroke: 2px #00000030; /* Adds a subtle outline for visibility */
+            z-index: -1;
+        }
+
+        @keyframes fadeInRainbow {
+            0% {
+                opacity: 0;
+                transform: scale(0.8) rotate(-5deg);
+                filter: blur(8px);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(1.1);
+                filter: blur(2px);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+                filter: blur(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="rainbow-text" data-text="Welcome to Paga and Gigi's Site!">
+        Welcome to Paga and Gigi's Site!
+    </div>
+</body>
+</html>
