@@ -29,24 +29,24 @@
 
         .wavy-text {
             font-family: 'Smothy Bubble', cursive;
-            font-size: 6rem; /* Increased font size */
-            font-weight: bolder; /* Stronger emphasis */
+            font-size: 3rem; /* Smaller font size */
+            font-weight: bold;
             color: white;
-            text-shadow: 4px 4px 8px black; /* Enhanced shadow for bold effect */
+            text-shadow: 3px 3px 6px black; /* Slightly subtler shadow */
             display: inline-block;
             animation: wave 2s infinite ease-in-out;
-            transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
+            transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
         }
 
         .wavy-text:hover {
-            transform: scale(1.1); /* Zoom effect on hover */
+            transform: scale(1.2); /* Zoom effect on hover */
         }
 
         @keyframes wave {
             0%, 100% { transform: translateY(0); }
-            25% { transform: translateY(-15px); }
-            50% { transform: translateY(15px); }
-            75% { transform: translateY(-10px); }
+            25% { transform: translateY(-10px); }
+            50% { transform: translateY(10px); }
+            75% { transform: translateY(-5px); }
         }
     </style>
 </head>
