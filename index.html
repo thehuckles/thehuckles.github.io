@@ -8,14 +8,12 @@
     <link rel="icon" href="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678087-heart-512.png" type="image/png">
 
     <!-- Smothy Bubble Font (Replace the link with the actual font URL if hosted) -->
-    <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
-
     <style>
         @font-face {
             font-family: 'Smothy Bubble';
             src: url('path-to-your-font-file.woff2') format('woff2'),
                  url('path-to-your-font-file.woff') format('woff');
-            font-weight: normal;
+            font-weight: bold;
             font-style: normal;
         }
 
@@ -32,18 +30,19 @@
 
         .wavy-text {
             font-family: 'Smothy Bubble', cursive;
-            font-size: 3rem;
+            font-size: 5rem; /* Increased font size */
+            font-weight: bold; /* Explicitly bold */
             color: white;
-            text-shadow: 2px 2px 4px black;
+            text-shadow: 3px 3px 6px black; /* Enhanced shadow for impact */
             display: inline-block;
             animation: wave 2s infinite ease-in-out;
         }
 
         @keyframes wave {
             0%, 100% { transform: translateY(0); }
-            25% { transform: translateY(-10px); }
-            50% { transform: translateY(10px); }
-            75% { transform: translateY(-5px); }
+            25% { transform: translateY(-15px); }
+            50% { transform: translateY(15px); }
+            75% { transform: translateY(-10px); }
         }
     </style>
 </head>
