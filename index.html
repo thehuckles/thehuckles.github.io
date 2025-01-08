@@ -7,10 +7,18 @@
     <!-- Favicon -->
     <link rel="icon" href="https://cdn0.iconfinder.com/data/icons/small-n-flat/24/678087-heart-512.png" type="image/png">
 
-    <!-- Bowlby One Font -->
+    <!-- Smothy Bubble Font (Replace the link with the actual font URL if hosted) -->
     <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
 
     <style>
+        @font-face {
+            font-family: 'Smothy Bubble';
+            src: url('path-to-your-font-file.woff2') format('woff2'),
+                 url('path-to-your-font-file.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -21,8 +29,27 @@
             justify-content: center;
             overflow: hidden;
         }
+
+        .wavy-text {
+            font-family: 'Smothy Bubble', cursive;
+            font-size: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px black;
+            display: inline-block;
+            animation: wave 2s infinite ease-in-out;
+        }
+
+        @keyframes wave {
+            0%, 100% { transform: translateY(0); }
+            25% { transform: translateY(-10px); }
+            50% { transform: translateY(10px); }
+            75% { transform: translateY(-5px); }
+        }
     </style>
 </head>
 <body>
+    <div class="wavy-text">
+        Welcome to The Huckles!
+    </div>
 </body>
 </html>
