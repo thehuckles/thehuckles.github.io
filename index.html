@@ -38,29 +38,11 @@
             animation: wave 2s infinite ease-in-out;
         }
 
-        .wavy-text::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            height: 10px;
-            background: white;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            animation: drip 1.5s infinite ease-in-out;
-        }
-
         @keyframes wave {
             0%, 100% { transform: translateY(0); }
             25% { transform: translateY(-10px); }
             50% { transform: translateY(10px); }
             75% { transform: translateY(-5px); }
-        }
-
-        @keyframes drip {
-            0% { height: 0; opacity: 0.5; }
-            50% { height: 10px; opacity: 1; }
-            100% { height: 0; opacity: 0.5; }
         }
 
         /* Falling Snow Animation */
@@ -77,12 +59,13 @@
         .snowflake {
             position: absolute;
             top: -10px;
-            width: 10px;
-            height: 10px;
+            width: 15px;
+            height: 15px;
             background: white;
             border-radius: 50%;
+            opacity: 0.9;
             box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
-            animation: fall 10s linear infinite, sway 3s ease-in-out infinite;
+            animation: fall 8s linear infinite, sway 3s ease-in-out infinite;
         }
 
         @keyframes fall {
@@ -95,7 +78,7 @@
             50% { transform: translateX(20px); }
         }
 
-        /* Snow Piling on Floor */
+        /* Snow Accumulating on Floor */
         .snow-floor {
             position: absolute;
             bottom: 0;
@@ -104,6 +87,7 @@
             height: 100px;
             background: white;
             box-shadow: 0 -2px 10px rgba(255, 255, 255, 0.5);
+            z-index: 2;
         }
 
         .snow-pile {
@@ -131,16 +115,16 @@
 <body>
     <div class="snow">
         <!-- Generate multiple snowflakes -->
-        <div class="snowflake" style="left: 5%; animation-delay: 0s; width: 8px; height: 8px;"></div>
-        <div class="snowflake" style="left: 15%; animation-delay: 1s; width: 12px; height: 12px;"></div>
-        <div class="snowflake" style="left: 25%; animation-delay: 0.5s; width: 10px; height: 10px;"></div>
-        <div class="snowflake" style="left: 35%; animation-delay: 1.5s; width: 14px; height: 14px;"></div>
-        <div class="snowflake" style="left: 45%; animation-delay: 2s; width: 9px; height: 9px;"></div>
-        <div class="snowflake" style="left: 55%; animation-delay: 0.2s; width: 11px; height: 11px;"></div>
-        <div class="snowflake" style="left: 65%; animation-delay: 2.5s; width: 13px; height: 13px;"></div>
-        <div class="snowflake" style="left: 75%; animation-delay: 1s; width: 10px; height: 10px;"></div>
-        <div class="snowflake" style="left: 85%; animation-delay: 3s; width: 12px; height: 12px;"></div>
-        <div class="snowflake" style="left: 95%; animation-delay: 1.5s; width: 8px; height: 8px;"></div>
+        <div class="snowflake" style="left: 5%; animation-delay: 0s; width: 15px; height: 15px;"></div>
+        <div class="snowflake" style="left: 15%; animation-delay: 1s; width: 20px; height: 20px;"></div>
+        <div class="snowflake" style="left: 25%; animation-delay: 0.5s; width: 18px; height: 18px;"></div>
+        <div class="snowflake" style="left: 35%; animation-delay: 1.5s; width: 22px; height: 22px;"></div>
+        <div class="snowflake" style="left: 45%; animation-delay: 2s; width: 16px; height: 16px;"></div>
+        <div class="snowflake" style="left: 55%; animation-delay: 0.2s; width: 19px; height: 19px;"></div>
+        <div class="snowflake" style="left: 65%; animation-delay: 2.5s; width: 21px; height: 21px;"></div>
+        <div class="snowflake" style="left: 75%; animation-delay: 1s; width: 17px; height: 17px;"></div>
+        <div class="snowflake" style="left: 85%; animation-delay: 3s; width: 20px; height: 20px;"></div>
+        <div class="snowflake" style="left: 95%; animation-delay: 1.5s; width: 14px; height: 14px;"></div>
     </div>
 
     <div class="wavy-text">
