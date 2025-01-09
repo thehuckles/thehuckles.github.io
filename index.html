@@ -9,9 +9,9 @@
 
     <style>
         @font-face {
-            font-family: 'Smothy Bubble';
-            src: url('path-to-your-font-file.woff2') format('woff2'),
-                 url('path-to-your-font-file.woff') format('woff');
+            font-family: 'Magic Snow';
+            src: url('path-to-magic-snow-font.woff2') format('woff2'),
+                 url('path-to-magic-snow-font.woff') format('woff');
             font-weight: bold;
             font-style: normal;
         }
@@ -19,27 +19,34 @@
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(45deg, beige, #d2b48c); /* Beige and light brown */
+            background: linear-gradient(45deg, #014d4e, #028282, beige, #d2b48c);
             height: 100vh;
+            overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
         }
 
         .wavy-text {
-            font-family: 'Smothy Bubble', cursive;
-            font-size: 3rem; /* Smaller font size */
+            font-family: 'Magic Snow', cursive;
+            font-size: 3rem;
             font-weight: bold;
             color: white;
-            text-shadow: 3px 3px 6px black; /* Slightly subtler shadow */
-            display: inline-block;
+            text-shadow: 3px 3px 6px black;
+            position: relative;
             animation: wave 2s infinite ease-in-out;
-            transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
         }
 
-        .wavy-text:hover {
-            transform: scale(1.2); /* Zoom effect on hover */
+        .wavy-text::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: white;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            animation: drip 1.5s infinite ease-in-out;
         }
 
         @keyframes wave {
@@ -48,9 +55,60 @@
             50% { transform: translateY(10px); }
             75% { transform: translateY(-5px); }
         }
+
+        @keyframes drip {
+            0% { height: 0; opacity: 0.5; }
+            50% { height: 10px; opacity: 1; }
+            100% { height: 0; opacity: 0.5; }
+        }
+
+        /* Falling Snow Animation */
+        .snow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .snowflake {
+            position: absolute;
+            top: -10px;
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+            animation: fall 5s linear infinite, sway 2s ease-in-out infinite;
+        }
+
+        @keyframes fall {
+            0% { transform: translateY(-10px); }
+            100% { transform: translateY(110vh); }
+        }
+
+        @keyframes sway {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(20px); }
+        }
     </style>
 </head>
 <body>
+    <div class="snow">
+        <!-- Generate multiple snowflakes -->
+        <div class="snowflake" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="snowflake" style="left: 20%; animation-delay: 0.5s;"></div>
+        <div class="snowflake" style="left: 30%; animation-delay: 1s;"></div>
+        <div class="snowflake" style="left: 40%; animation-delay: 1.5s;"></div>
+        <div class="snowflake" style="left: 50%; animation-delay: 2s;"></div>
+        <div class="snowflake" style="left: 60%; animation-delay: 2.5s;"></div>
+        <div class="snowflake" style="left: 70%; animation-delay: 3s;"></div>
+        <div class="snowflake" style="left: 80%; animation-delay: 3.5s;"></div>
+        <div class="snowflake" style="left: 90%; animation-delay: 4s;"></div>
+    </div>
+
     <div class="wavy-text">
         Welcome to The Huckles!
     </div>
